@@ -188,7 +188,7 @@ function myFunction3(arr3,emp_name3,msg) {
 
 function setTime(){
   var dt = new Date();
-        var nn =  dt.setMinutes( dt.getMinutes() + 1);
+        var nn =  dt.setMinutes( dt.getMinutes() + 30);
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -220,7 +220,6 @@ var x = setInterval(function() {
 
 $('.common_click').on('click',function(e){
             e.preventDefault();
-            // $(this).addClass('disableClick');
                 var count = $('#count').val();
                 count++;
                 $('#count').val(count);
@@ -230,9 +229,6 @@ $('.common_click').on('click',function(e){
                     dataType: 'json',
                     data: {num:count},
                     url: 'fetching.php',
-                    beforeSend: function(){
-                           $(this).addClass('disableClick');
-                         },
                     success: function (data) {
                         if(data.status == 'success'){
                           // alert(data.img_set_1);
